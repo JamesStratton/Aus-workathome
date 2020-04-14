@@ -22,33 +22,40 @@ global img pdf
 * --------------------------------------------------
 * Run code  
 * --------------------------------------------------
+
 *** Create results
 
 * Create Australian employment data at ANZSCO code level 
-do "${code}/create_aus_anzsco_level.do"
+do "${code}/estimate/create_aus_anzsco_level.do"
 
 * Clean Australian employment data at ANZSCO code level
-do "${code}/clean_aus_anzsco_level.do"
+do "${code}/estimate/clean_aus_anzsco_level.do"
 
 * Crosswalk Australian employment data to ISCO code level 
-do "${code}/crosswalk_aus_to_isco_level.do"
+do "${code}/estimate/crosswalk_aus_to_isco_level.do"
 
 * Reshape Australian employment data to be long on ISCO x level 
-do "${code}/reshape_aus_long_isco.do"
+do "${code}/estimate/reshape_aus_long_isco.do"
 
 * Crosswalk teleworkable shares at ISCO code level 
-do "${code}/crosswalk_oes_to_ISCO_level.do"
+do "${code}/estimate/crosswalk_oes_to_ISCO_level.do"
 
 * Create summary tables 
-do "${code}/summary_tables_by_cut.do"
+do "${code}/estimate/summary_tables_by_cut.do"
+
+* Create two-digit data and compare to two-digit results 
+do "${code}/estimate/dingel_neiman_country_level_measures.do"
 
 *** Create figures
 
 * Graph industry shares 
-do "${code}/industry_shares.do"
+do "${code}/figures/graph_industry_shares.do"
 
 * Graph education shares 
-do "${code}/education_shares.do"
+do "${code}/figures/graph_education_shares.do"
 
-* Map of Australian shares 
-do "${code}/maps.do"
+* Graph education shares 
+do "${code}/figures/graph_wage_shares.do"
+
+* Create maps  
+do "${code}/figures/map_sa4_shares.do"
