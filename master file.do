@@ -7,7 +7,7 @@ This .do file is a master file for the full code.
 * --------------------------------------------------
 * Set relevant globals 
 * --------------------------------------------------
-global aus_work_home "/Users/Jimmy/Desktop/GitHub/Aus-workathome"
+global aus_work_home "${github}/Aus-workathome"
 global raw_data  "${aus_work_home}/raw_data"
 global derived_data "${aus_work_home}/derived_data"
 global results "${aus_work_home}/results"
